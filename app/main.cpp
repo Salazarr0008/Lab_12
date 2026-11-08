@@ -48,6 +48,7 @@ Choice parse_choice(const std::string &text) {
 int main() {
   Hangman hangman;
   Minesweeper minesweeper;
+  Dungeon dungeon;
   std::string line;
   while (true) {
     print_menu();
@@ -64,7 +65,8 @@ int main() {
       report_score(hangman.last_score());
       break;
     case Choice::dungeon:
-      report_score(play_dungeon());
+      dungeon.play();
+      report_score(dungeon.last_score());
       break;
     case Choice::blackjack:
       report_score(play_blackjack());

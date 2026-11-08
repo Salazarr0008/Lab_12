@@ -139,4 +139,19 @@ int play_dungeon() {
     }
   }
   return dungeon_score(player.inventory_count(), player.health());
+
+}
+
+
+Dungeon::Dungeon()
+    : Game("Dungeon"), m_times_played(0) {
+}
+
+void Dungeon::play() {
+    ++m_times_played;
+    set_score(play_dungeon());
+}
+
+int Dungeon::times_played() const {
+    return m_times_played;
 }
