@@ -1,6 +1,8 @@
 #ifndef ARCADE_MINESWEEPER_H
 #define ARCADE_MINESWEEPER_H
 
+#include "game.h"
+
 /// @file minesweeper.h
 /// @brief The Minesweeper game loop.
 
@@ -13,5 +15,15 @@ int minesweeper_score(int revealed_count, bool won);
 /// Play one game on an 8-by-8 board with 10 mines.
 /// @return minesweeper_score() when the game ends or the player quits
 int play_minesweeper();
+
+class Minesweeper : public Game {
+public:
+    Minesweeper();
+    void play();
+    int times_played() const;
+
+private:
+    int m_times_played;
+};
 
 #endif // ARCADE_MINESWEEPER_H

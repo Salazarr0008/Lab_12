@@ -90,3 +90,18 @@ int play_minesweeper() {
     }
   }
 }
+
+
+Minesweeper::Minesweeper()
+    : Game("Minesweeper"), m_times_played(0) {
+}
+
+
+void Minesweeper::play() {
+    ++m_times_played;
+    set_score(play_minesweeper());
+}
+
+int Minesweeper::times_played() const {
+    return m_times_played;
+}
