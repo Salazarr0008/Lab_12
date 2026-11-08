@@ -3,6 +3,7 @@
 
 #include "deck.h"
 #include "hand.h"
+#include "game.h"
 
 /// @file blackjack.h
 /// @brief Blackjack for one player against the dealer.
@@ -36,5 +37,15 @@ int payout(Outcome outcome, int bet);
 /// bankroll is 0.
 /// @return the final bankroll
 int play_blackjack();
+
+class Blackjack : public Game {
+public:
+    Blackjack();
+    void play();
+    int times_played() const;
+
+private:
+    int m_times_played;
+};
 
 #endif // ARCADE_BLACKJACK_H

@@ -176,3 +176,18 @@ int play_blackjack() {
   }
   return bankroll;
 }
+
+
+Blackjack::Blackjack()
+    : Game("Blackjack"), m_times_played(0) {
+}
+
+void Blackjack::play() {
+    ++m_times_played;
+    set_score(play_blackjack());
+}
+
+int Blackjack::times_played() const {
+    return m_times_played;
+}
+
